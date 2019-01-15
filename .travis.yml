@@ -5,5 +5,5 @@ cache:
   directories:
     - node_modules
 script:
-  - npm install
+  - cd client npm install
   - cd client && npm test -- --coverage
