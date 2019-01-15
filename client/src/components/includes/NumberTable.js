@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NumberTable = ({ phoneNumbers, isLoading, handleGenerate }) => {
+const NumberTable = ({ phoneNumbers, isLoading, handleGenerate, onChange }) => {
   return (
     <div>
       {
@@ -27,7 +27,8 @@ const NumberTable = ({ phoneNumbers, isLoading, handleGenerate }) => {
               }} role="status">
               <span className="sr-only">Loading...</span>
             </div> </div> :
-          <div style={{
+          <div>
+            <div style={{
             float: 'left',
             marginTop: 30,
             marginBottom: 30,
@@ -36,7 +37,22 @@ const NumberTable = ({ phoneNumbers, isLoading, handleGenerate }) => {
             type="button"
             onClick={handleGenerate}
             className="btn btn-primary btn-lg"><i className="fas fa-plus-square"></i> Generate Numbers</button>
+
+
           </div>
+          <div style={{
+            float: 'right',
+            margin: 30
+          }}>
+            <select onChange={(e) => onChange(e.target.value)}>
+              <option>Sort</option>
+              <option>Ascending</option>
+              <option>Descending</option>
+            </select>
+          </div>
+          </div>
+
+
 
       }
 
@@ -56,7 +72,7 @@ const NumberTable = ({ phoneNumbers, isLoading, handleGenerate }) => {
               <tr key={i}>
                 <th scope="row">{i + 1}</th>
                 <td>{numbers.phoneNumber}</td>
-                <td>{numbers.date}</td>
+                <td>{new Date(numbers.date).toDateString()}</td>
                 <td>{numbers.generatedBy}</td>
               </tr>
             ))

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Main from "./routes/Main";
 import { generateNumbers, listNumbers } from "./actions/numberActions";
 import toastr from 'toastr';
+import {reSort} from './helpers/helpers'
 
 class App extends Component {
 
@@ -17,6 +18,14 @@ class App extends Component {
         phoneNumbers: data.phoneNumbers,
         isLoading: false
       })
+    })
+  }
+
+  onChange = (value) => {
+    let phoneNumbers;
+    phoneNumbers = reSort(this.state.phoneNumbers, value)
+    this.setState({
+      phoneNumbers
     })
   }
 
@@ -48,6 +57,7 @@ class App extends Component {
   render() {
     return (
       <Main
+      onChange={this.onChange}
       isLoading={this.state.isLoading}
       phoneNumbers={this.state.phoneNumbers}
       handleGenerate={this.handleGenerate}

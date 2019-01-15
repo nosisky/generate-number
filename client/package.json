@@ -2,13 +2,31 @@
   "name": "number-generator",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000/",
+  "proxy": "http://localhost:8000/",
   "dependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.3",
     "toastr": "^2.1.4"
+  },
+  "jest": {
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!<rootDir>/node_modules/",
+    "!<rootDir>/src/__mocks__"
+  ],
+  "coverageReporters": ["lcov"]  
+  },
+  "coverageThreshold": {
+    "global": {
+      "branches": 90,
+      "functions": 90,
+      "lines": 90,
+      "statements": 90
+    }
   },
   "scripts": {
     "start": "react-scripts start",
