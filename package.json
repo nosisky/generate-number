@@ -6,7 +6,7 @@
     "server": "nodemon --exec babel-node server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
-    "server:test": "NODE_ENV=test &&./node_modules/.bin/nyc --reporter=lcov mocha --reporter spec --timeout 40000 --compilers js:babel-core/register server/tests"
+    "server:test": "NODE_ENV=test &&./node_modules/.bin/nyc --reporter=lcov mocha --reporter spec --timeout 40000 --compilers js:@babel/register server/tests"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
@@ -21,12 +21,10 @@
     "supertest": "^3.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
     "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.2.3",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
+    "@babel/preset-env": "^7.0.0",
     "concurrently": "^4.0.1"
   }
 }
