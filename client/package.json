@@ -16,9 +16,11 @@
   "collectCoverageFrom": [
     "src/**/*.{js,jsx,ts,tsx}",
     "!<rootDir>/node_modules/",
-    "!<rootDir>/src/__mocks__"
+    "!<rootDir>/src/__mocks__",
+    "!<rootDir>/src/index.js",
+    "!<rootDir>/src/serviceWorker.js"
   ],
-  "coverageReporters": ["lcov"]  
+  "coverageReporters": ["text"]  
   },
   "coverageThreshold": {
     "global": {

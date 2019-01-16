@@ -23,7 +23,6 @@ const NumberGenerator = {
     const prefix = "090-124-";
  
     for (let i = 1; i <= 5; i++) {
-      console.log('hello')
       let newNumber = Math.floor(1000 + Math.random() * 9000);
       const generatedNumber = `${prefix}${newNumber}`
       const obj = {

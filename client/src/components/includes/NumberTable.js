@@ -44,7 +44,8 @@ const NumberTable = ({ phoneNumbers, isLoading, handleGenerate, onChange }) => {
             float: 'right',
             margin: 30
           }}>
-            <select onChange={(e) => onChange(e.target.value)}>
+            <select 
+            onChange={(e) => onChange(e.target.value)}>
               <option>Sort</option>
               <option>Ascending</option>
               <option>Descending</option>

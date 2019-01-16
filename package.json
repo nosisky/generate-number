@@ -4,17 +4,24 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon --exec babel-node server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
+    "server:test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 60000 --compilers js:@babel/register server/tests --exit"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "axios": "^0.18.0",
     "expect": "^23.6.0",
     "express": "^4.16.4",
-    "jsonfile": "^5.0.0"
+    "jsonfile": "^5.0.0",
+    "moxios": "^0.4.0",
+    "nyc": "^13.1.0",
+    "supertest": "^3.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
-    "@babel/node": "^7.2.2",
+    "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.2.3",
     "concurrently": "^4.0.1"
   }
