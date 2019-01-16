@@ -1,4 +1,4 @@
-# phone-number-generator
+# Phone number generator
 
 [![Coverage Status](https://coveralls.io/repos/github/nosisky/generate-number/badge.svg?branch=master)](https://coveralls.io/github/nosisky/generate-number?branch=master) - Test Coverage
 
