@@ -1,6 +1,6 @@
 import expect from 'expect';
 import supertest from 'supertest';
-import 'babel-polyfill';
+
 import server from '../../server';
 
 describe('Number generator: ', () => {
