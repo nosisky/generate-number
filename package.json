@@ -6,7 +6,7 @@
     "server": "nodemon --exec babel-node server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
-    "server:test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 60000 --compilers js:@babel/register server/tests --exit"
+    "server:test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 60000 --compilers js:@babel/register server/tests --exit"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
