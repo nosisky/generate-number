@@ -4,6 +4,7 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon --exec babel-node server.js",
+    "start:production": "babel-node server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
     "server:test": "NODE_ENV=test &&./node_modules/.bin/nyc --reporter=lcov mocha --reporter spec --timeout 40000 --compilers js:@babel/register server/tests --exit",
