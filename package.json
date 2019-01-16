@@ -7,7 +7,7 @@
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "coverage": "NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
     "server:test": "NODE_ENV=test &&./node_modules/.bin/nyc --reporter=lcov mocha --reporter spec --timeout 40000 --compilers js:@babel/register server/tests --exit",
-    "heroku-postbuild": "NODE_ENV=production && cd client && npm i && && npm run build"
+    "heroku-postbuild": "NODE_ENV=production && cd client && npm i && npm run build"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
