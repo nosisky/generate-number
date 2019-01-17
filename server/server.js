@@ -11,7 +11,7 @@ app.get('/api/generate', generateNumber);
 
 app.get('/api/list', listNumber);
 
-app.use(express.static(path.resolve(__dirname, '../app')));
+app.use(express.static(path.resolve(__dirname, '../client/build/')));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('*', (req, res) => {
