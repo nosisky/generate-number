@@ -1,7 +1,7 @@
 import expect from 'expect';
 import supertest from 'supertest';
 
-import server from '../../server';
+import server from '../server';
 
 describe('Number generator: ', () => {
   it('lists numbers', (done) => {
